@@ -3,9 +3,13 @@ package com.project.views.services
 import com.project.views.model.Invoice
 import com.project.views.repository.InvoiceRepository
 import org.springframework.beans.factory.annotation.Autowired
+<<<<<<< HEAD
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.web.server.ResponseStatusException
+=======
+import org.springframework.stereotype.Service
+>>>>>>> a421182686aabb4bf853d2ae234824ae90c36c45
 
 
 @Service
@@ -16,6 +20,7 @@ class InvoiceService {
     fun list(): List<Invoice> {
         return invoiceRepository.findAll()
     }
+<<<<<<< HEAD
     fun save(invoice: Invoice): Invoice {
         try {
             return invoiceRepository.save(invoice)
@@ -49,4 +54,6 @@ class InvoiceService {
             throw ResponseStatusException(HttpStatus.NOT_FOUND, ex.message)
         }
     }
+=======
+>>>>>>> a421182686aabb4bf853d2ae234824ae90c36c45
 }

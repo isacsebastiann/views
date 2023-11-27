@@ -3,9 +3,13 @@ package com.project.views.services
 import com.project.views.model.Product
 import com.project.views.repository.ProductRepository
 import org.springframework.beans.factory.annotation.Autowired
+<<<<<<< HEAD
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.web.server.ResponseStatusException
+=======
+import org.springframework.stereotype.Service
+>>>>>>> a421182686aabb4bf853d2ae234824ae90c36c45
 
 
 @Service
@@ -16,6 +20,7 @@ class ProductService {
     fun list(): List<Product> {
         return productRepository.findAll()
     }
+<<<<<<< HEAD
     fun save(product: Product): Product {
         try {
             return productRepository.save(product)
@@ -49,4 +54,6 @@ class ProductService {
             throw ResponseStatusException(HttpStatus.NOT_FOUND, ex.message)
         }
     }
+=======
+>>>>>>> a421182686aabb4bf853d2ae234824ae90c36c45
 }

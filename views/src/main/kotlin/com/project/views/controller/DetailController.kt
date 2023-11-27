@@ -3,6 +3,7 @@ package com.project.views.controller
 import com.project.views.model.Detail
 import com.project.views.services.DetailService
 import org.springframework.beans.factory.annotation.Autowired
+<<<<<<< HEAD
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -11,6 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
+=======
+import org.springframework.web.bind.annotation.GetMapping
+>>>>>>> a421182686aabb4bf853d2ae234824ae90c36c45
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -24,6 +28,7 @@ class DetailController {
     fun list(): List<Detail> {
         return detailService.list()
     }
+<<<<<<< HEAD
     @GetMapping("/{id}")
     fun listById(@PathVariable("id") id: Long): ResponseEntity<*> {
         return ResponseEntity(detailService.listById(id), HttpStatus.OK)
@@ -43,4 +48,6 @@ class DetailController {
     fun delete(@PathVariable("id") id: Long): ResponseEntity<Boolean?> {
         return ResponseEntity(detailService.delete(id), HttpStatus.OK)
     }
+=======
+>>>>>>> a421182686aabb4bf853d2ae234824ae90c36c45
 }

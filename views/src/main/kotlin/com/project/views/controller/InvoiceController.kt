@@ -43,5 +43,10 @@ class InvoiceController {
     fun delete(@PathVariable("id") id: Long): ResponseEntity<Boolean?> {
         return ResponseEntity(invoiceService.delete(id), HttpStatus.OK)
     }
+    @GetMapping("/filter-total/{value}")
+    fun listTotals (@PathVariable("value") value: Double ):ResponseEntity<*>{
+        return ResponseEntity(invoiceService.filterTotal(value), HttpStatus.OK)
+    }
+
 }
 

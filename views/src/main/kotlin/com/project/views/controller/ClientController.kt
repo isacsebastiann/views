@@ -2,6 +2,7 @@ package com.project.views.controller
 
 import com.project.views.model.Client
 import com.project.views.services.ClientService
+import com.project.views.services.InvoiceService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -19,6 +20,9 @@ import org.springframework.web.bind.annotation.RestController
 class ClientController {
     @Autowired
     lateinit var clientService: ClientService
+    @Autowired
+    lateinit var invoiceService: InvoiceService
+
 
     @GetMapping
     fun list(): List<Client> {
@@ -48,5 +52,9 @@ class ClientController {
     @DeleteMapping("/delete/{id}")
     fun delete(@PathVariable("id") id: Long): ResponseEntity<Boolean?> {
         return ResponseEntity(clientService.delete(id), HttpStatus.OK)
+    }
+    @GetMapping("/{value}/invoices")
+    fun listInvoice(@PathVariable("value") value: Long ):ResponseEntity<*>{
+        return ResponseEntity(invoiceService.listInvoice(value), HttpStatus.OK)
     }
 }

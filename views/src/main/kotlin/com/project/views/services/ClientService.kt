@@ -2,7 +2,9 @@ package com.project.views.services
 
 
 import com.project.views.model.Client
+import com.project.views.model.Invoice
 import com.project.views.repository.ClientRepository
+import com.project.views.repository.InvoiceRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service

@@ -49,4 +49,9 @@ class InvoiceService {
             throw ResponseStatusException(HttpStatus.NOT_FOUND, ex.message)
         }
     }
+    fun filterTotal(value:Double?): List<Invoice>? {
+        return invoiceRepository.filterTotal(value)
+    }
+    fun listInvoice(value:Long?): List<Invoice>? {
+        return invoiceRepository.listInvoice(value)}
 }

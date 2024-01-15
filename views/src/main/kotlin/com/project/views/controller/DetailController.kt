@@ -44,3 +44,4 @@ class DetailController {
         return ResponseEntity(detailService.delete(id), HttpStatus.OK)
     }
 }
+

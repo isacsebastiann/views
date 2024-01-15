@@ -1,5 +1,7 @@
 package com.project.views.services
 
+import com.project.views.dto.ProductDto
+import com.project.views.mappers.ProductMapper
 import com.project.views.model.Product
 import com.project.views.repository.ProductRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -48,4 +50,16 @@ class ProductService {
             throw ResponseStatusException(HttpStatus.NOT_FOUND, ex.message)
         }
     }
+    fun listDto(): List<ProductDto> {
+        val productList = productRepository.findAll()
+        val productDtoList: MutableList<ProductDto> = mutableListOf()
+
+
+        productList.map{ product ->
+            val productDto= ProductMapper.mapToDto(product)
+            productDtoList.add(productDto)
+        }
+        return productDtoList
+    }
+
 }

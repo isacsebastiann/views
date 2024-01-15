@@ -19,4 +19,6 @@ class Client {
 
     @Column(name = "address", nullable = false)
     var address: String? = null
+    @Column(name= "email", nullable = false)
+    var email: String?= null
 }

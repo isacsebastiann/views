@@ -23,12 +23,12 @@ class Detail {
     @Column(name = "price", nullable = false)
     var price: BigDecimal? = null
 
-    @ManyToOne
+  //  @ManyToOne
     @JoinColumn(name = "invoice_id")
-    var invoice: Invoice? = null
+    var invoiceId:Long? = null
 
-    @ManyToOne
+    // @ManyToOne
     @JoinColumn(name = "product_id")
-    var product: Product? = null
+    var productId: Long? = null
 }
 

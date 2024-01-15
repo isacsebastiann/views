@@ -28,6 +28,11 @@ class ProductController {
     fun listById(@PathVariable("id") id: Long): ResponseEntity<*> {
         return ResponseEntity(productService.listById(id), HttpStatus.OK)
     }
+    @GetMapping("/list-dto")
+    fun listDto(): ResponseEntity<*> {
+        return ResponseEntity(productService.listDto(), HttpStatus.OK)
+    }
+
 
     @PostMapping
     fun save(@RequestBody product: Product): ResponseEntity<Product> {

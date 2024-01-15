@@ -31,3 +31,7 @@ class Invoice {
     @JoinColumn(name = "client_id")
     var client: Client? = null
 }
+
+
+
+

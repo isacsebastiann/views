@@ -37,7 +37,6 @@ class ClientController {
     fun save(@RequestBody client: Client): ResponseEntity<Client> {
         return ResponseEntity(clientService.save(client), HttpStatus.OK)
     }
-
     @PutMapping
     fun update(@RequestBody client: Client): ResponseEntity<Client> {
         return ResponseEntity(clientService.update(client
